@@ -35,10 +35,8 @@ serve(app);
 
 This library can be used in any Node.js application.
 
-You only need location of views folder.
-
-- It needs to be an absolute path.
-- All handlebars files must end with `.hbs`.
+- You only need location of views folder. It needs to be an absolute path.
+- All handlebar files must end with `.hbs`.
 - All the partials and layouts should be inside the views folder.
 - Partials will be automatically registered.
 - Default layout is main.hbs. But you can change it by passing `layoutName` in `render` method. e.g `hbs.render("home", data, "myLayout")`
