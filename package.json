@@ -1,0 +1,47 @@
+{
+	"name": "node-hbs",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "A Node.js framework agnostic library for handlebars template engine",
+	"author": {
+		"name": "Mohammad Siddiqui",
+		"email": "24387047+siddiquipro@users.noreply.github.com",
+		"url": "https://github.com/siddiquipro"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/siddiquipro/node-hbs.git"
+	},
+	"keywords": [
+		"node",
+		"hono",
+		"hbs",
+		"handlebars",
+		"hono hbs",
+		"hono handlebars"
+	],
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"test": "vitest",
+		"build": "vite build",
+		"deploy": "npm publish",
+		"typecheck": "tsc --noEmit",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix"
+	},
+	"dependencies": {
+		"handlebars": "^4.7.8"
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "^3.8.0",
+		"@types/node": "^22.8.6",
+		"eslint": "^9.13.0",
+		"eslint-plugin-format": "^0.1.2",
+		"typescript": "^5.6.3",
+		"vite": "^5.4.10",
+		"vite-plugin-dts": "^4.3.0",
+		"vitest": "^2.1.4"
+	}
+}
