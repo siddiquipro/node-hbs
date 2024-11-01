@@ -42,9 +42,11 @@ export class NodeHbs {
 		];
 
 		partials.forEach((path) => {
-			if (!path) {
+			if (!path || !fs.existsSync(path)) {
+				debug(`path does not exist: ${path}`);
 				return;
 			}
+
 			this.registerPartial(path);
 		});
 	}
@@ -64,8 +66,13 @@ export class NodeHbs {
 	}
 
 	public registerPartial(path: string): void {
-		// check if path is a directory
-		if (!fs.statSync(path).isDirectory()) {
+		// check if path exists
+		if (!fs.existsSync(path)) {
+			throw new Error(`path does not exist: ${path}`);
+		}
+
+		// check if path is a file
+		if (fs.statSync(path).isFile()) {
 			this.registerFile(path);
 			return;
 		}
