@@ -2,7 +2,7 @@ import handlebars from "handlebars";
 import fs from "node:fs";
 import { basename, join } from "node:path";
 
-import type { HbsData, HbsOptions } from "./types/index.js";
+import type { HbsData, HbsOptions, RegisteredPartials } from "./types/index.js";
 
 import debug from "./debug.js";
 
@@ -13,6 +13,8 @@ export class NodeHbs {
 
 	private hasMainLayout: boolean = false;
 	private defaultLayout = "main";
+
+	private registeredPartials: RegisteredPartials[] = [];
 
 	constructor(options: HbsOptions) {
 		this.globalState = options.globalData || {};
@@ -64,7 +66,10 @@ export class NodeHbs {
 
 		const raw = fs.readFileSync(filePath, "utf-8");
 		debug("registering partial:: %s", fileName);
+
 		handlebars.registerPartial(fileName, this.compileRaw(raw));
+
+		this.registeredPartials.push({ path: filePath, name: fileName });
 	}
 
 	public registerPartial(path: string): void {
@@ -118,6 +123,10 @@ export class NodeHbs {
 	private getLayout(filename: string) {
 		const raw = this.readPath(join(this.opts.layoutsPath!, `${filename}.hbs`));
 		return this.compileRaw(raw);
+	}
+
+	public getRegisteredPartialNames(): RegisteredPartials [] {
+		return this.registeredPartials;
 	}
 
 	public render(name: string, data: HbsData = {}, layoutName: string | null = this.defaultLayout): string {

@@ -51,9 +51,10 @@ This library can be used in any Node.js application.
 
 ### Available methods
 
-- `render(name: string, data: HbsData = {}, layoutName: string | null = defaultLayout): string`
-- `registerHelper(name: string, fn: (...args: any[]) => any): void`
-- `registerPartial(path: string): void`
+- `render(name: string, data: HbsData = {}, layoutName: string | null = defaultLayout): string` - Render page with handlebars data
+- `registerHelper(name: string, fn: (...args: any[]) => any): void` - Register handlebars helper
+- `registerPartial(path: string): void` - Register handlebars partial
+- `getRegisteredPartialNames(): Array<{ path: string, name: string }>` - Get registered partial names and absolute paths
 
 ### Directory Structure
 

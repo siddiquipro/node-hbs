@@ -6,7 +6,11 @@ export interface HbsOptions {
 	globalData?: HbsData;
 	externalPartialPaths?: string[];
 	defaultLayout?: string;
+}
 
+export interface RegisteredPartials {
+	path: string;
+	name: string;
 }
 
 export type HbsData = Record<string, any>;
