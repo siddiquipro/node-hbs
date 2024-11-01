@@ -1,4 +1,4 @@
-# Node HBS templating engine
+# Node HBS - Handlebars templating engine
 
 A Node.js framework agnostic library for handlebars template engine
 
