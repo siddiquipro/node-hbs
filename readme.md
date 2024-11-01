@@ -41,7 +41,21 @@ This library can be used in any Node.js application.
 - Partials will be automatically registered.
 - Default layout is main.hbs. But you can change it by passing `layoutName` in `render` method. e.g `hbs.render("home", data, "myLayout")`
 
-Directory Structure
+### Props
+
+- `viewsPath`: Path to views folder (required)
+- `partialsPath`: Path to partials folder (default: `views/partials`)
+- `layoutsPath`: Path to layouts folder (default: `views/layouts`)
+- `defaultLayout`: Name of default layout (default: `main`)
+- `externalPartialPaths`: List of external partials (default: `[]`)
+
+### Available methods
+
+- `render(name: string, data: HbsData = {}, layoutName: string | null = defaultLayout): string`
+- `registerHelper(name: string, fn: (...args: any[]) => any): void`
+- `registerPartial(path: string): void`
+
+### Directory Structure
 
 ```bash
 ├── src
@@ -83,3 +97,7 @@ The partials are loaded from `partials` folder. You can also add partials by cal
 The registerPartial will load all the partials from the path supplied and if these are folders then will be loaded recursively for all hbs files and register them.
 
 All the partials are registered with the name of the partial file. Please ensure the name are distinct.
+
+## Views
+
+The views are loaded from the root of `views` folder.
