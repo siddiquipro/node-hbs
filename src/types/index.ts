@@ -5,6 +5,7 @@ export interface HbsOptions {
 	partialsPath?: string;
 	globalData?: HbsData;
 	externalPartialPaths?: string[];
+	defaultLayout?: string;
 
 }
 

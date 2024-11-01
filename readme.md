@@ -38,8 +38,9 @@ This library can be used in any Node.js application.
 You only need location of views folder.
 
 - It needs to be an absolute path.
-- all the partials and layouts should be inside the views folder.
-- partials will be automatically registered.
+- All handlebars files must end with `.hbs`.
+- All the partials and layouts should be inside the views folder.
+- Partials will be automatically registered.
 - Default layout is main.hbs. But you can change it by passing `layoutName` in `render` method. e.g `hbs.render("home", data, "myLayout")`
 
 Directory Structure
@@ -54,3 +55,33 @@ Directory Structure
     │   └── footer.hbs
     └── home.hbs
 ```
+
+## Layouts
+
+The default layout is `main.hbs`. You can change the layout for each page by passing `layoutName` in `render` method. e.g `hbs.render("home", data, "myLayout")`. To change the default layout, pass `defaultLayout` in constructor. e.g `new NodeHbs({ defaultLayout: "myLayout" })`
+
+Whenever you create a layout make sure it has `mainSlot` in it.
+
+```html
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Example</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="bg-gray-100">
+		<main class="container mx-auto py-4">{{{ mainSlot }}}</main>
+	</body>
+</html>
+
+```
+
+## Partials
+
+The partials are loaded from `partials` folder. You can also add partials by calling `registerPartial` method. e.g `hbs.registerPartial(join(import.meta.dirname, "..", "node_modules" , "package"))`
+
+The registerPartial will load all the partials from the path supplied and if these are folders then will be loaded recursively for all hbs files and register them.
+
+All the partials are registered with the name of the partial file. Please ensure the name are distinct.

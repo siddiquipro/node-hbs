@@ -12,6 +12,7 @@ export class NodeHbs {
 	private opts: HbsOptions;
 
 	private hasMainLayout: boolean = false;
+	private defaultLayout = "main";
 
 	constructor(options: HbsOptions) {
 		this.globalState = options.globalData || {};
@@ -28,6 +29,7 @@ export class NodeHbs {
 		};
 
 		this.hasMainLayout = fs.existsSync(join(this.opts.layoutsPath!, "main.hbs"));
+		this.defaultLayout = options.defaultLayout ?? "main";
 
 		debug(`options %o`, { ...this.opts, hasMainLayout: this.hasMainLayout });
 
@@ -118,7 +120,7 @@ export class NodeHbs {
 		return this.compileRaw(raw);
 	}
 
-	public render(name: string, data: HbsData = {}, layoutName: string | null = "main"): string {
+	public render(name: string, data: HbsData = {}, layoutName: string | null = this.defaultLayout): string {
 		// render layout and page with handlebars data
 		const payload = { ...this.globalState, ...data };
 
