@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/siddiquipro/node-hbs/compare/v1.0.1...v1.0.2) (2024-11-01)
+
+
+### Bug Fixes
+
+* path check before import ([9951f39](https://github.com/siddiquipro/node-hbs/commit/9951f3982afa9e27bb5be8d335662eb69ab193e8))
+
 ## [1.0.1](https://github.com/siddiquipro/node-hbs/compare/v1.0.0...v1.0.1) (2024-11-01)
 
 
