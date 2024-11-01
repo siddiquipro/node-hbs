@@ -23,6 +23,11 @@
 	],
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"files": [
+		"LICENSE",
+		"README.md",
+		"dist"
+	],
 	"scripts": {
 		"test": "vitest",
 		"build": "vite build",
