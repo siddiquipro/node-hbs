@@ -43,11 +43,11 @@ This library can be used in any Node.js application.
 
 ### Props
 
-- `viewsPath`: Path to views folder (required)
-- `partialsPath`: Path to partials folder (default: `views/partials`)
-- `layoutsPath`: Path to layouts folder (default: `views/layouts`)
+- `viewsPath`: Absolute Path to views folder (required)
+- `partialsPath`: Absolute Path to partials folder (default: `views/partials`)
+- `layoutsPath`: Absolute Path to layouts folder (default: `views/layouts`)
 - `defaultLayout`: Name of default layout (default: `main`)
-- `externalPartialPaths`: List of external partials (default: `[]`)
+- `externalPartialPaths`: List of external partials absolute paths (default: `[]`)
 
 ### Available methods
 
