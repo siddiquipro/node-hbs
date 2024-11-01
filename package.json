@@ -1,7 +1,7 @@
 {
 	"name": "node-hbs",
 	"type": "module",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "A Node.js framework agnostic library for handlebars template engine",
 	"author": {
 		"name": "Mohammad Siddiqui",

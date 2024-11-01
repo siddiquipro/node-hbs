@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/siddiquipro/node-hbs/compare/v1.0.2...v1.0.3) (2024-11-01)
+
+
+### Performance Improvements
+
+* docs updates ([b07610b](https://github.com/siddiquipro/node-hbs/commit/b07610be260ad057eca77acdc9f103373d15eade))
+
 ## [1.0.2](https://github.com/siddiquipro/node-hbs/compare/v1.0.1...v1.0.2) (2024-11-01)
 
 
